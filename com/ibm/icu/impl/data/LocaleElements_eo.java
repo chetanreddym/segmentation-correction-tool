@@ -1,0 +1,12 @@
+package com.ibm.icu.impl.data;
+
+import com.ibm.icu.impl.ICUListResourceBundle;
+
+
+public class LocaleElements_eo
+  extends ICUListResourceBundle
+{
+  public LocaleElements_eo() { contents = data; }
+  
+  static final Object[][] data = { { "AmPmMarkers", { "atm", "ptm" } }, { "CollationElements", { { "%%CollationBin", new com.ibm.icu.impl.ICUListResourceBundle.ResourceBinary("CollationElements_eo.col") }, { "Sequence", "&C<ĉ<<<Ĉ &G<ĝ<<<Ĝ &H<ĥ<<<Ĥ&J<ĵ<<<Ĵ &S<ŝ<<<Ŝ &U<ŭ<<<Ŭ" }, { "Version", "1.0" } } }, { "Countries", { { "AT", "Aŭstrujo" }, { "BE", "Belgujo" }, { "CA", "Kanado" }, { "CH", "Svisujo" }, { "DE", "Germanujo" }, { "DK", "Danujo" }, { "ES", "Hispanujo" }, { "FI", "Finnlando" }, { "GR", "Grekujo" }, { "IT", "Italujo" }, { "JP", "Japanujo" }, { "NL", "Nederlando" }, { "NO", "Norvego" }, { "PT", "Portugalujo" }, { "SE", "Svedujo" }, { "TR", "Turkujo" }, { "US", "Usono" } } }, { "DateTimeElements", { "2", "4" } }, { "DateTimePatterns", { "H'-a horo kaj 'm z", "HH:mm:ss z", "HH:mm:ss", "HH:mm", "EEEE, d'-a de 'MMMM yyyy", "yyyy-MMMM-dd", "yyyy-MMM-dd", "yy-MM-dd", "{1} {0}" } }, { "DayAbbreviations", { "di", "lu", "ma", "me", "ĵa", "ve", "sa" } }, { "DayNames", { "dimanĉo", "lundo", "mardo", "merkredo", "ĵaŭdo", "vendredo", "sabato" } }, { "Eras", { "aK", "pK" } }, { "ExemplarCharacters", "[a-z ŭ ĉ ĝ ĥ ĵ ŝ]" }, { "Languages", { { "da", "dana" }, { "de", "germana" }, { "el", "greka" }, { "en", "angla" }, { "eo", "esperanto" }, { "es", "hispana" }, { "fi", "finna" }, { "it", "itala" }, { "ja", "japana" }, { "nl", "nederlanda" }, { "no", "norvega" }, { "pt", "portugala" }, { "sv", "sveda" }, { "tr", "turka" } } }, { "MonthAbbreviations", { "jan", "feb", "mar", "apr", "maj", "jun", "jul", "aŭg", "sep", "okt", "nov", "dec" } }, { "MonthNames", { "januaro", "februaro", "marto", "aprilo", "majo", "junio", "julio", "aŭgusto", "septembro", "oktobro", "novembro", "decembro" } }, { "NumberElements", { ",", " ", ";", "%", "0", "#", "-", "E", "‰", "∞", "�", "," } }, { "SpelloutRules", "-x: minus >>;\nx.x: << komo >>;\nnulo; unu; du; tri; kvar; kvin; ses; sep; ok; naŭ;\n10: dek[ >>];\n20: <<dek[ >>];\n100: cent[ >>];\n200: <<cent[ >>];\n1000: mil[ >>];\n2000: <<mil[ >>];\n10000: dekmil[ >>];\n11000>: << mil[ >>];\n1,000,000: miliono[ >>];\n2,000,000: << milionoj[ >>];\n1,000,000,000: miliardo[ >>];\n2,000,000,000: << miliardoj[ >>];\n1,000,000,000,000: biliono[ >>];\n2,000,000,000,000: << bilionoj[ >>];\n1,000,000,000,000,000: =#,##0=;\n" }, { "Version", "3.0" }, { "localPatternChars", "GjMtkHmslTDUSnahKzJd" } };
+}

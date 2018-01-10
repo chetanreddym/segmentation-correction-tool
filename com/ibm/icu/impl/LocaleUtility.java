@@ -1,0 +1,134 @@
+package com.ibm.icu.impl;
+
+import java.util.Locale;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public class LocaleUtility
+{
+  public LocaleUtility() {}
+  
+  public static Locale getLocaleFromName(String name)
+  {
+    String language = "";
+    String country = "";
+    String variant = "";
+    
+    int i1 = name.indexOf('_');
+    if (i1 < 0) {
+      language = name;
+    } else {
+      language = name.substring(0, i1);
+      i1++;
+      int i2 = name.indexOf('_', i1);
+      if (i2 < 0) {
+        country = name.substring(i1);
+      } else {
+        country = name.substring(i1, i2);
+        variant = name.substring(i2 + 1);
+      }
+    }
+    
+    return new Locale(language, country, variant);
+  }
+  
+
+
+
+
+  public static boolean isFallbackOf(String parent, String child)
+  {
+    if (!child.startsWith(parent)) {
+      return false;
+    }
+    int i = parent.length();
+    return (i == child.length()) || (child.charAt(i) == '_');
+  }
+  
+
+
+
+
+
+  public static boolean isFallbackOf(Locale parent, Locale child)
+  {
+    return isFallbackOf(parent.toString(), child.toString());
+  }
+  
+
+
+
+
+  public static String canonicalLocaleString(Locale locale)
+  {
+    return canonicalLocaleString(locale.toString());
+  }
+  
+
+
+
+
+
+  public static String canonicalLocaleString(String id)
+  {
+    if (id != null) {
+      int x = id.indexOf("_");
+      if (x == -1) {
+        id = id.toLowerCase(Locale.ENGLISH);
+      } else {
+        StringBuffer buf = new StringBuffer();
+        buf.append(id.substring(0, x).toLowerCase(Locale.ENGLISH));
+        buf.append(id.substring(x).toUpperCase(Locale.ENGLISH));
+        
+        int len = buf.length();
+        int n = len;
+        do { n--; } while ((n >= 0) && (buf.charAt(n) == '_'));
+        n++; if (n != len) {
+          buf.delete(n, len);
+        }
+        id = buf.toString();
+      }
+    }
+    return id;
+  }
+  
+
+
+
+
+
+
+
+
+
+  public static Locale fallback(Locale loc)
+  {
+    String[] parts = { loc.getLanguage(), loc.getCountry(), loc.getVariant() };
+    
+
+    for (int i = 2; i >= 0; i--) {
+      if (parts[i].length() != 0) {
+        parts[i] = "";
+        break;
+      }
+    }
+    if (i < 0) {
+      return null;
+    }
+    return new Locale(parts[0], parts[1], parts[2]);
+  }
+}
